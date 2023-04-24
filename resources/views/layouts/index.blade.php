@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
-<div class="container">
-    @include('components.main.header');
-    @include('components.main');
-    @include('components.footer');
-</div>
+    <div class="container">
+        @include('components.main.header');
+    </div>
 </body>
 </html>
