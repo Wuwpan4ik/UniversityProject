@@ -37,6 +37,11 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
+.wrapper{
+    height: 100%;
+    flex: 1 1 100%;
+}
+
 footer{
     background-color: #282828;
     font-family: 'Inter';
@@ -58,6 +63,7 @@ footer{
     font-size: 47px;
     font-weight: 500;
     color: #B7B7B7;
+    margin: 0 0 15px;
 }
 
 .footer_text{
@@ -76,6 +82,9 @@ footer{
     font-size: 29px;
     line-height: 120%;
     color: #FFFFFF;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
 }
 
 .socials_row{
