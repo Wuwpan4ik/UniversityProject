@@ -11,8 +11,7 @@
 <body>
 <div class="container">
     @include('components.main.header');
-    @include('components.main');
-    @include('components.footer');
+    @include('components.main.footer');
 </div>
 </body>
 </html>
