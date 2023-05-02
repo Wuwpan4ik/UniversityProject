@@ -16,9 +16,9 @@
             <div class="footer_socials">
                 <div class="footer_title">Социальные сети</div>
                 <div class="socials_row">
-                    <img class="footer_icon" src="{{asset('img/Google.png')}}" alt="">
-                    <img class="footer_icon" src="{{asset('img/Apple.png')}}" alt="">
-                    <img class="footer_icon" src="{{asset('img/VK.svg')}}" alt="">
+                    <img class="icon" src="{{asset('img/social/Google.png')}}" alt="">
+                    <img class="icon" src="{{asset('img/social/Apple.png')}}" alt="">
+                    <img class="icon" src="{{asset('img/social/VK.svg')}}" alt="">
                 </div>
             </div>
         </div>

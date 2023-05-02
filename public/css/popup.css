@@ -1,0 +1,74 @@
+.send__button {
+  font-family: "Inter";
+  font-size: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 13px 0;
+  background: #232323;
+  border-radius: 11px;
+}
+.send__button:hover {
+  background: #1a202c;
+  color: #C3E2F9;
+}
+
+.popup__background {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+}
+.popup__container {
+  min-width: 320px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+.popup__title {
+  text-align: center;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 60px;
+  color: #000000;
+}
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 40px;
+}
+.popup__input {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px 15px;
+}
+.popup__label {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  color: #BEBEBE;
+}
+.popup__label p {
+  padding: 10px 0px;
+}
+
+.popup__social-link a:hover {
+  opacity: 0.6;
+}
+
+@media only screen and (max-width: 450px) {
+  .popup__title {
+    font-size: 40px;
+  }
+  .popup__form {
+    padding: 0 10px;
+  }
+}

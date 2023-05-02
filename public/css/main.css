@@ -36,7 +36,14 @@ img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
-
+.icon{
+    color: black;
+    font-size: 35px;
+    opacity: .8;
+}
+.icon:hover {
+    opacity: 1;
+}
 .wrapper{
     height: 100%;
     flex: 1 1 100%;
@@ -92,8 +99,4 @@ footer{
     justify-content: center;
     gap: 14px;
     padding: 24px ;
-}
-
-.footer_icon{
-    width: 50px;
 }
