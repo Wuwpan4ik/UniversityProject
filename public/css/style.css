@@ -1,0 +1,127 @@
+@import"reser.css";
+.body{
+    font-family: 'Inter',sans-serif;
+    color:#000000;
+}
+.container{
+    max-width:1380px;
+    padding:0 10px 0 30px;
+    margin:0 auto;
+}
+.header {
+    padding: 10px 0px 6px 0px;
+    background-color: #FFFFFF;
+}
+.header a{
+    color: #000000;
+    font-family: 'Inter',sans-serif;
+}
+.header-menu{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.menu-label{
+    display: flex;
+    column-gap: 18px;
+    align-items: center;
+    margin-right:18px;
+}
+.label-name{
+    font-weight: 600;
+    font-family: 'Inter',sans-serif;
+}
+.menu-nav{
+    margin-right: 24px;
+}
+.nav-list{
+    display: flex;
+    column-gap: 48px;
+}
+.nav-dropdown{
+    display: none;
+}
+.item-dropdown{
+    display:inline-block;
+}
+.item-drop{
+    color: #000000;
+    font-family: 'Inter',sans-serif;
+}
+.dropdown-content{
+    display: none;
+}
+.item-dropdown.open .dropdown-content {
+    position: absolute;
+    display:block;
+    border: 3px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
+    padding: 3px 16px 6px 25px;
+}
+.dropdown-content a{
+    display: block;
+    font-weight: 600;
+}
+.nav-content{
+    display: none;
+}
+.nav-dropdown.open .nav-content {
+    position: fixed;
+    display:block;
+    z-index: 2;
+    border: 3px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
+    padding: 3px 16px 6px 25px;
+    background-color: #ffffff;
+}
+.nav-content a{
+    display: block;
+    font-weight: 600;
+}
+.a-content{
+    display: none;
+}
+.a-drop{
+    color: #000000;
+    font-family: 'Inter',sans-serif;
+    font-weight: 600;
+}
+.a-dropdown.open .a-content{
+    position: absolute;
+    display:block;
+    border: 3px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
+    padding: 3px 16px 6px 25px;
+    background-color: #ffffff;
+}
+.menu-tools{
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+.search-form{
+    display: flex;
+    align-items: center;
+    background: #F4F4F4;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 6px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    width: 200px;
+}
+input::placeholder{
+    color: #BEBEBE;
+    font-family: 'Inter',sans-serif;
+}
+
+.form-button:hover {
+    cursor: pointer;
+}
+.add-btn{
+    background: #DD987B;
+    box-shadow: 0px 3px 5px #4F4F4F;
+    border-radius: 5px;
+    padding: 11px 30px;
+}
