@@ -4,5 +4,4 @@
         @include('components.main.header');
     </div>
     @extends('components.main.footer')
-    @extends('components.popups.login')
 @endsection

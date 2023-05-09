@@ -1,56 +1,52 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="popup__background">
+        <div class="popup__container">
+            <div class="popup__image"><img src="" alt=""></div>
+            <div class="popup__form">
+                <h2 class="popup__title">
+                    Авторизация
+                </h2>
+                <form action="{{ route('login') }}" method="POST" class="popup__form">
+                    <label class="popup__label" for="password"><p>Логин</p>
+                        <input class="popup__input" placeholder="Логин" id="username" type="text" name="username">
+                    </label>
+                    <label class="popup__label" for="password">
+                        <p>Пароль</p><input class="popup__input" placeholder="Пароль" id="password" type="text" name="password">
+                    </label>
+                    <button class="send__button">
+                        Войти
+                    </button>
+                </form>
+                <div class="popup__social">
+                    <div class="popup__social-title" style="font-size: 18px;">
+                        Или войдите с помощью
+                    </div>
+                    <div class="socials_row" style="justify-content: start; padding: 10px 0">
+                        <a href=""><i class="fa-brands fa-google icon"></i></a>
+                        <a href=""><i style="color: #2563ea" class="fa-brands fa-telegram icon"></i></a>
+                        <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>
+                    </div>
+                    <div class="popup__social-link" style="font-size: 20px;">
+                        Нету аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+</body>
+</html>

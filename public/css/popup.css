@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  gap: 40px;
+  gap: 20px;
 }
 .popup__input {
   font-family: "Inter";
