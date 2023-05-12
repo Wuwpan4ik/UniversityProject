@@ -1,0 +1,19 @@
+@media(max-width: 800px){
+     .redactor-menu{
+         align-items:center ;
+     }
+    .profile{
+        padding: 39px 0 41px 0;
+    }
+    .redactor{
+        padding: 29px 0 50px 0;
+    }
+
+}
+
+@media(max-width: 505px){
+
+    .redactor-text{
+        display: none;
+    }
+}
