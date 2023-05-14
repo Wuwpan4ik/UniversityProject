@@ -5,13 +5,6 @@
 @endsection
 @section('content')
     <div class="container" style="max-width: 800px">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit">
-                Привет
-            </button>
-        </form>
-        @include('components.main.header')
         <div class="main">
             <div class="main__title">
                 <h1 class="title">Редактировать профиль
@@ -70,5 +63,4 @@
             </div>
         </div>
     </div>
-    @include('components.main.footer')
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Main\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Main\User\UpdateRequest;
 use App\Models\User;
+use App\Models\Work\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PharIo\Version\Exception;
@@ -28,7 +29,8 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-
+        $works = Work::where('user_id', $user->id)->get();
+        return view('account.show', compact('works'));
     }
 
     public function edit(User $user)
@@ -60,7 +62,7 @@ class UserController extends Controller
             $user->save();
         }
 
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
     public function destroy($id)

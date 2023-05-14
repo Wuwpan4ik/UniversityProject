@@ -1,65 +1,31 @@
 @extends('layouts.index')
+@section('title', 'Главная страница')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/settings.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/media.css') }}">
 @endsection
 @section('content')
-    <div class="container" style="max-width: 800px">
-        @include('components.main.header')
-        <div class="main">
-            <div class="main__title">
-                <h1 class="title">Редактировать профиль
-            </div>
-            <div class="main__settings">
-                <form action="" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <div class="settings">
-                        <div class="left__bar settings__bar">
-                            <div class="circle" style="width: 140px; height: 140px; border-radius: 50%; background-color: #4F4F4F">
-                            </div>
-                            <button type="button" style="background-color: transparent;">
-                                <img src="{{ asset('img/load__icon.png') }}" alt=""> Загрузить
-                            </button>
-                        </div>
-                        <div class="right__bar">
-                            <div class="cl-2">
-                                <label class="popup__label" for="name">
-                                    Имя
-                                    <input type="text" id="name" class="settings__input" value="{{ Auth::user()->name }}">
-                                </label>
-                                <label class="popup__label" for="surname">
-                                    Фамилия
-                                    <input type="text" id="surname" class="settings__input" value="{{ Auth::user()->surname }}">
-                                </label>
-                            </div>
-                            <div class="cl-1">
-                                <label class="popup__label" for="email">
-                                    Электронная почта
-                                    <input type="text" id="email" class="settings__input" value="{{ Auth::user()->email }}">
-                                </label>
-                            </div>
-                            <div class="cl-1">
-                                <label class="popup__label" for="username">
-                                    Имя пользователя
-                                    <input type="text" id="username" class="settings__input" value="{{ Auth::user()->username }}">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main__about cl-1">
-                        <label class="popup__label" for="about">
-                            <h2 class="title">О себе</h2>
-                            <textarea name="about" id="about" class="settings__input" cols="30" rows="10" placeholder="..."></textarea>
-                        </label>
-                    </div>
-                    <div class="cl-1">
-                        <button type="submit" class="settings__button">
-                            Применить изменения
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <section class="title container">
+        <div class="title-name"><p class="">Создай<br>
+                портфолио</p></div>
+        <div class="title-info"><p class="">С помощью нашего сервиса ты<br> можешь представить нужный продукт</p></div>
+        <div class="title-footer">
+            <p class="">lorem Ipsum</p>
         </div>
-    </div>
-    @include('components.main.footer')
+    </section>
+    <section class="container">
+        <div class="works-column">
+            @foreach($works as $work)
+            <div class="column-work">
+                <div class="work-name">{{ $work->user->name }}</div>
+                <div class="work-title">{{ $work->name }}</div>
+                <div class="work-image"><img src="{{ Storage::url($work->image) }}" alt="" class="work"></div>
+                <div class="work-like">
+                    <button class="like-image"><img src="{{ asset('img/like.png') }}" alt="" class="like"></button>
+                    <div class="like-count"><p>1565</p></div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
 @endsection

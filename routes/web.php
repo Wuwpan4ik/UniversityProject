@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::middleware('auth')->group(function() {
-    Route::get('/', function () {return view('main');} );
+    Route::get('/', [\App\Http\Controllers\MainController::class, 'index'] )->name('home');
     Route::resource('user', \App\Http\Controllers\Main\User\UserController::class);
+    Route::resource('work', \App\Http\Controllers\Main\Work\WorkController::class);
 });
 
 Route::get('/dashboard', function () {

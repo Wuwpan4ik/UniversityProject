@@ -65,10 +65,12 @@
     justify-content: center;
     gap: 10px;
     width: 100%;
+    color: black;
 }
 
 .settings__input {
     font-size: 18px;
+    color: black;
     padding: 10px 20px;
     border: 1px solid #A4A4A4;
     border-radius: 5px;
