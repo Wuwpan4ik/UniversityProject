@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('auth')->group(function() {
     Route::get('/', function () {return view('main');} );
-
+    Route::resource('user', \App\Http\Controllers\Main\User\UserController::class);
 });
 
 Route::get('/dashboard', function () {

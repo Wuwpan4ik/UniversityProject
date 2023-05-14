@@ -22,11 +22,12 @@
                 Регистрация
             </h2>
             <form action="{{ route('register') }}" method="POST" class="popup__form">
+                @csrf
                 <label class="popup__label" for="password"><p>Логин</p>
                     <input class="popup__input" placeholder="Логин" id="username" type="text" name="username">
                 </label>
                 <label class="popup__label" for="password"><p>Почта</p>
-                    <input class="popup__input" placeholder="Почта" id="username" type="email" name="username">
+                    <input class="popup__input" placeholder="Почта" id="username" type="email" name="email">
                 </label>
                 <label class="popup__label" for="password">
                     <p>Пароль</p><input class="popup__input" placeholder="Пароль" id="password" type="password" name="password">

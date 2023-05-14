@@ -44,6 +44,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .icon:hover {
     opacity: 1;
 }
+
+.title {
+    font-family: 'Inter';
+    font-size: 29px;
+    line-height: 120%;
+    color: #000000;
+}
 .wrapper{
     height: 100%;
     flex: 1 1 100%;
