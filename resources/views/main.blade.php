@@ -13,8 +13,9 @@
 </head>
 <body>
 <div class="wrapper">
-    @include('components.main.header')  
+    @include('components.main.profile')  
 </div>
+
 @include('components.main.footer')
 </body>
 </html>
