@@ -16,7 +16,7 @@ class AddToUsersSurnameAboutMeImage extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('surname')->nullable();
             $table->text('about_me')->nullable();
-            $table->string('avatar')->default(env('default_avatar'));
+            $table->string('avatar')->nullable()->default(env('default_avatar'));
         });
     }
 
