@@ -20,8 +20,8 @@ class CreateTagsTable extends Migration
         });
 
         Schema::create('work_tag', function (Blueprint $table) {
-            $table->foreignId('work_id')->nullable()->index()->constrained('works');
-            $table->foreignId('tag_id')->nullable()->index()->constrained('tags');
+            $table->foreignId('work_id')->nullable()->index()->constrained('works')->onDelete('cascade');
+            $table->foreignId('tag_id')->nullable()->index()->constrained('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }

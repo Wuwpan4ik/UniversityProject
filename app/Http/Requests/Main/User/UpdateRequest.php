@@ -24,12 +24,12 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'name' => 'string|min:3',
-            'surname' => 'string|min:3',
-            'email' => 'email|min:3',
-            'username' => 'string|min:3',
-            'about_me' => 'string|min:5'
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048|nullable',
+            'name' => 'string|min:3|nullable',
+            'surname' => 'string|min:3|nullable',
+            'email' => 'email|min:3|nullable',
+            'username' => 'string|min:3|nullable',
+            'about_me' => 'string|nullable'
         ];
     }
 }
