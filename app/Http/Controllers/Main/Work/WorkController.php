@@ -25,6 +25,7 @@ class WorkController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+        Debugbar::log($data);
         $work = Work::create($data);
 
         if ($request->file('image')) {

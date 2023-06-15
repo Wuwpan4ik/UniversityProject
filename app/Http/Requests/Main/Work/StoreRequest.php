@@ -25,8 +25,9 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'string|required',
+            'category_id' => 'numeric|required|exists:categories,id',
             'description' => 'string|required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048|required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'user_id' => 'required|exists:users,id'
         ];
     }

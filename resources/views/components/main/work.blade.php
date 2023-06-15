@@ -15,7 +15,7 @@
             <button type="button" onclick="like(this)" class="like-image">
                 <i class="fa-solid fa-thumbs-up like @if($work->userHaveLike()) active @endif "></i>
             </button>
-            <div class="like-count">{{ $work->likes_count }}</div>
+            <div class="like-count" >@if(is_null($work->likes_count)) 0 @else {{$work->likes_count}} @endif</div>
         </form>
     </div>
 </div>

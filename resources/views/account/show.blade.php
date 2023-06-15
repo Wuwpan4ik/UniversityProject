@@ -57,8 +57,10 @@
     <section class="profile">
         <div class="container">
             <div class="profile-menu" style="width: 100%">
-                <div class="menu-avatar circle">
-                    <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="" class="avatar">
+                <div style="display: flex;align-items: center;gap: 30px;">
+                    <div class="menu-avatar circle">
+                        <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="" class="avatar">
+                    </div>
                     <div class="menu-name">
                         <div style="margin-bottom: 15px">
                             <p style="color: black">{{ Auth::user()->username }}</p>
@@ -94,20 +96,15 @@
         <div class="container">
             <div class="redactor-menu">
                 <div class="redactor-menu_container">
-                    @foreach($works as $work)
-                        <div class="menu-myWorks">
-                            <img src="{{ $work->image }}" alt="">
-                            <h3>
-                                {{ $work->name }}
-                            </h3>
-                            <h3>
-                                {{ $work->description }}
-                            </h3>
-                        </div>
-                    @endforeach
-                    <div class="menu-myWorks">
-                        <button type="button" onclick="open_add_project()" class="menu-add"><img src="{{ asset('img/plus.png') }}" alt="" class="plus"></button>
+                    <div class="works-column">
+                        @foreach($works as $work)
+                            @include('components.main.work')
+                        @endforeach
+                            <div class="menu-myWorks">
+                                <button type="button" onclick="open_add_project()" class="menu-add"><img src="{{ asset('img/plus.png') }}" alt="" class="plus"></button>
+                            </div>
                     </div>
+
                 </div>
                 <div class="menu-logo" onclick="open_add_project()"><img src="{{ asset('img/logo.png') }}" alt="" class="logo"></div>
                 <button type="button" style="color: black" onclick="open_add_project()" class="menu-send">Создайте проект</button>
@@ -121,6 +118,11 @@
                 <input type="file" name="image">
                 <input name="name" type="text" placeholder="Укажите название">
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                <select name="category_id">
+                    @foreach(\App\Models\Category::all() as $category)
+                        <option style="color: black" value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endforeach
+                </select>
                 <textarea name="description" placeholder="Укажите описание" cols="30" rows="10"></textarea>
             </form>
             <div class="popup-footer">

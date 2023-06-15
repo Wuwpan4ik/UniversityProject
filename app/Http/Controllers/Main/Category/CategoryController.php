@@ -48,7 +48,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $works = Work::where('category_id', $category->id)->get();
+        $works = Work::where('category_id', $category->id)->withCount(['likes'])->get();
         return view('main', compact('works', 'category'));
     }
 
