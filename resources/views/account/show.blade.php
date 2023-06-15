@@ -63,7 +63,7 @@
                     </div>
                     <div class="menu-name">
                         <div style="margin-bottom: 15px">
-                            <p style="color: black">{{ Auth::user()->username }}</p>
+                            <p style="color: black">@if(Auth::user()->name) {{ Auth::user()->name }} {{ Auth::user()->surname }} @else {{ Auth::user()->username }} @endif</p>
                         </div>
                         <button type="button" onclick="copyLink()" style="color: black; display: flex; align-items: center; gap: 10px"><span id="share">Поделиться</span><i class="fa-solid fa-share"></i></button>
                     </div>
