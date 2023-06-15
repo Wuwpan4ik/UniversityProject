@@ -17,6 +17,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/top_author', [\App\Http\Controllers\MainController::class, 'topAuthor'] )->name('topAuthor');
     Route::get('/top_works', [\App\Http\Controllers\MainController::class, 'topWorks'] )->name('topWorks');
     Route::resource('user', \App\Http\Controllers\Main\User\UserController::class);
+    Route::patch('/user-mail/{user}', [\App\Http\Controllers\Main\User\UserController::class, 'updateMail'])->name('mail');
     Route::resource('work', \App\Http\Controllers\Main\Work\WorkController::class);
     Route::get('category/{category}', [\App\Http\Controllers\Main\Category\CategoryController::class, 'show'])->name('category.show');
     Route::patch('like/{work}', [\App\Http\Controllers\Main\Work\WorkController::class, 'like'])->name('like');

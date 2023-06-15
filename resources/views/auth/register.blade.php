@@ -71,14 +71,14 @@
                 </button>
             </form>
             <div class="popup__social">
-                <div class="popup__social-title" style="font-size: 18px;">
-                    Или войдите с помощью
-                </div>
-                <div class="socials_row" style="justify-content: start; padding: 10px 0">
-                    <a href=""><i class="fa-brands fa-google icon"></i></a>
-                    <a href=""><i style="color: #2563ea" class="fa-brands fa-telegram icon"></i></a>
-                    <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>
-                </div>
+{{--                <div class="popup__social-title" style="font-size: 18px;">--}}
+{{--                    Или войдите с помощью--}}
+{{--                </div>--}}
+{{--                <div class="socials_row" style="justify-content: start; padding: 10px 0">--}}
+{{--                    <a href=""><i class="fa-brands fa-google icon"></i></a>--}}
+{{--                    <a href=""><i style="color: #2563ea" class="fa-brands fa-telegram icon"></i></a>--}}
+{{--                    <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>--}}
+{{--                </div>--}}
                 <div class="popup__social-link" style="font-size: 20px;">
                     Уже есть аккаунт? <a href="{{ route('login') }}" style="color: black;">Авторизуйтесь</a>
                 </div>

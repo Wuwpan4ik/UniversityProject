@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Main\User\UpdateRequest;
 use App\Models\User;
 use App\Models\Work\Work;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PharIo\Version\Exception;
@@ -63,6 +64,11 @@ class UserController extends Controller
         }
 
         return redirect()->route('home');
+    }
+
+    public function updateMail(Request $request, User $user) {
+        $user->mail = $request->mail;
+        $user->save();
     }
 
     public function destroy($id)

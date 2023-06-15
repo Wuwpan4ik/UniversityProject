@@ -26,7 +26,8 @@ class User extends Authenticatable
         'surname',
         'about_me',
         'avatar',
-        'is_manager'
+        'is_manager',
+        'mail'
     ];
 
     /**

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/settings.css') }}">
 @endsection
 @section('content')
-    <div class="container" style="max-width: 800px">
+    <div class="container" style="max-width: 800px; padding-bottom: 100px   ">
         <div class="main">
             <div class="main__title">
                 <h1 class="title">Редактировать профиль
@@ -48,10 +48,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main__about cl-1">
+                    <div class="main__about cl-1" style="margin-bottom: 50px">
                         <label class="popup__label" for="about">
                             <h2 class="title">О себе</h2>
-                            <textarea name="about_me" id="about" class="settings__input" cols="30" rows="10" placeholder="...">{{ Auth::user()->about_me }}</textarea>
+                            <textarea name="about_me" style="width: 100%;" id="about" class="settings__input" cols="30" rows="10" placeholder="...">{{ Auth::user()->about_me }}</textarea>
                         </label>
                     </div>
                     <div class="cl-1">
