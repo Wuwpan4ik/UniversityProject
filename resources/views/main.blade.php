@@ -10,7 +10,6 @@
                 портфолио</p></div>
         <div class="title-info"><p class="">С помощью нашего сервиса ты<br> можешь представить нужный продукт</p></div>
         <div class="title-footer">
-            <p class="">lorem Ipsum</p>
         </div>
     </section>
     <section class="container">
