@@ -3,7 +3,7 @@
         <div class="footer_row">
             <div class="footer_about">
                 <div class="footer_title">О нас</div>
-                <div class="footer_text">Мы — команда, которая создала этот сайт, чтобы помочь талантливым фотографам продемонстрировать свои работы во всей красе.</div>
+                <div class="footer_text">RapPortfolio - веб-сервис для всех, кто находится в поиске своего места в мире. Мы поможем вам найти работу.</div>
             </div>
             <div class="footer_navigation">
                 <div class="footer_title">Навигация</div>
