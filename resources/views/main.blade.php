@@ -14,17 +14,14 @@
         </div>
     </section>
     <section class="container">
+        @isset($category)
+            <div class="title-name" style="margin: 50px 0">
+                <p class="" style="color: black;">{{ $category->title }}</p>
+            </div>
+        @endisset
         <div class="works-column">
             @foreach($works as $work)
-            <div class="column-work">
-                <div class="work-name">{{ $work->user->name }}</div>
-                <div class="work-title">{{ $work->name }}</div>
-                <div class="work-image"><img src="{{ Storage::url($work->image) }}" alt="" class="work"></div>
-                <div class="work-like">
-                    <button class="like-image"><img src="{{ asset('img/like.png') }}" alt="" class="like"></button>
-                    <div class="like-count"><p>1565</p></div>
-                </div>
-            </div>
+                @include('components.main.work')
             @endforeach
         </div>
     </section>

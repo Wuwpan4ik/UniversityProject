@@ -51,10 +51,15 @@ body{
 }
 
 .column-work{
-    padding: 54px 56px 105px 57px;
+    padding: 54px 56px 54px 57px;
     background-color: #D6D5D4;
     flex: 0 1 33.333%;
 }
+
+.work-image img {
+    width: 100%;
+}
+
 .works-column:nth-child(even){
     background-color: #FFFFFF;
 
@@ -73,11 +78,22 @@ body{
 .work-image{
     margin-bottom: 14px;
 }
-.work-like{
+.work-like .like__form{
     display: flex;
+    align-items: center;
     column-gap: 7px;
     justify-content: flex-end;
 }
+
 .like-count{
     font-size:11px ;
+}
+
+.like {
+    color: red;
+    font-size: 20px;
+}
+
+.like.active {
+    color: green;
 }

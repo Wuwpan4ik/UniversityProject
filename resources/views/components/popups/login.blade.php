@@ -23,7 +23,7 @@
                     <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>
                 </div>
                 <div class="popup__social-link" style="font-size: 20px;">
-                    Нету аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
+                    Нет аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
                 </div>
             </div>
         </div>

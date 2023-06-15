@@ -56,6 +56,16 @@
   font-size: 18px;
   color: #BEBEBE;
 }
+
+.popup__input.error {
+    border: 3px solid #cb5959;
+    box-shadow: 11px 13px 8px 0px rgba(216, 117, 52, 0.2);
+}
+
+li.error {
+    color: #cb5959;
+}
+
 .popup__label p {
   padding: 10px 0px;
 }

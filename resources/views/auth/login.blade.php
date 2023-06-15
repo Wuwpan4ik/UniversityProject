@@ -23,12 +23,23 @@
                 </h2>
                 <form action="{{ route('login') }}" method="POST" class="popup__form">
                     @csrf
-                    <label class="popup__label" for="password"><p>Логин</p>
-                        <input class="popup__input" placeholder="Логин" id="username" type="text" name="username">
+                    <label class="popup__label" for="password"><p>Почта</p>
+                        <input class="popup__input @error('username') error @enderror" placeholder="Почта" id="email" type="text" name="email">
                     </label>
                     <label class="popup__label" for="password">
-                        <p>Пароль</p><input class="popup__input" placeholder="Пароль" id="password" type="text" name="password">
+                        <p>Пароль</p><input class="popup__input @error('password') error @enderror" placeholder="Пароль" id="password" type="text" name="password">
                     </label>
+                    @if(count($errors))
+                        <label class="popup__label errors" for="password">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li class="error">
+                                        {{ $error }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </label>
+                    @endif
                     <button class="send__button">
                         Войти
                     </button>
@@ -43,11 +54,22 @@
                         <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>
                     </div>
                     <div class="popup__social-link" style="font-size: 20px;">
-                        Нету аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
+                        Нет аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll(".popup__input.error").forEach(item => {
+                item.addEventListener('input', function () {
+                    this.classList.remove('error')
+                    document.querySelector('.errors').classList.add('display-none')
+                })
+
+            })
+        })
+    </script>
 </body>
 </html>

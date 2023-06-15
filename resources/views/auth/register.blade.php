@@ -14,6 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<style>
+    .popup__label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    #is_manager {
+        width: auto !important;
+    }
+</style>
 <div class="popup__background">
     <div class="popup__container">
         <div class="popup__image"><img src="" alt=""></div>
@@ -23,18 +34,38 @@
             </h2>
             <form action="{{ route('register') }}" method="POST" class="popup__form">
                 @csrf
-                <label class="popup__label" for="password"><p>Логин</p>
-                    <input class="popup__input" placeholder="Логин" id="username" type="text" name="username">
+                <label class="popup__label " for="password">
+                    <p>Логин</p>
+                    <input class="popup__input @error('username') error @enderror" placeholder="Логин" id="username" type="text" name="username">
                 </label>
-                <label class="popup__label" for="password"><p>Почта</p>
-                    <input class="popup__input" placeholder="Почта" id="username" type="email" name="email">
+
+                <label class="popup__label " for="password">
+                    <p>Почта</p>
+                    <input class="popup__input @error('email') error @enderror" placeholder="Почта" id="username" type="email" name="email">
                 </label>
-                <label class="popup__label" for="password">
-                    <p>Пароль</p><input class="popup__input" placeholder="Пароль" id="password" type="password" name="password">
+                <label class="popup__label " for="password">
+                    <p>Пароль</p>
+                    <input class="popup__input @error('password') error @enderror" placeholder="Пароль" id="password" type="password" name="password">
                 </label>
                 <label class="popup__label" for="password_confirm">
-                    <p>Подтвердите пароль</p><input class="popup__input" placeholder="Пароль" id="password" type="password" name="password_confirmation">
+                    <p>Подтвердите пароль</p>
+                    <input class="popup__input @error('password_confirmation') error @enderror" placeholder="Пароль" id="password" type="password" name="password_confirmation">
                 </label>
+                <label class="popup__label" for="password_confirm">
+                    <p>Являетесь менеджером?</p>
+                    <input id="is_manager" class="popup__input" placeholder="Пароль" value="1" type="checkbox" name="is_manager">
+                </label>
+                @if(count($errors))
+                    <label class="popup__label errors" for="password">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li class="error">
+                                {{ $error }}
+                            </li>
+                            @endforeach
+                        </ul>
+                    </label>
+                @endif
                 <button class="send__button">
                     Создать аккаунт
                 </button>
@@ -55,5 +86,16 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll(".popup__input.error").forEach(item => {
+            item.addEventListener('input', function () {
+                this.classList.remove('error')
+                document.querySelector('.errors').classList.add('display-none')
+            })
+
+        })
+    })
+</script>
 </body>
 </html>

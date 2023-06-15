@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Main\Work;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Main\Work\StoreRequest;
+use App\Models\Like;
 use App\Models\Work\Work;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorkController extends Controller
 {
@@ -31,8 +34,23 @@ class WorkController extends Controller
 
             $work->image = "work/{$work->id}/$fileName";
             $work->save();
+        } else {
+            $work->image = null;
+            $work->save();
         }
         return redirect()->back();
+    }
+
+    public function like(Request $request, Work $work)
+    {
+        if ($work->userHaveLike()) {
+            Debugbar::log(Like::where('work_id', $work->id)->where('user_id', Auth::id())->delete());
+        } else {
+            Like::create([
+                'work_id' => $work->id,
+                'user_id' => Auth::id()
+            ]);
+        }
     }
 
     /**

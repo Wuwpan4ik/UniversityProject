@@ -37,15 +37,24 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-
-
 a{
     color:black;
 }
 
+html {
+    height: 100%;
+}
+
 .wrapper{
     height: 100%;
-    flex: 1 1 100%;
+}
+
+.content {
+    height: 100%;
+    margin: 0;
+    color: #fff;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 footer{
@@ -55,6 +64,7 @@ footer{
 
 .container{
     max-width: 1440px;
+    width: 100%;
     margin: 0px auto;
 }
 
@@ -62,6 +72,10 @@ footer{
     display: flex;
     justify-content: space-between;
     padding: 45px 33px 47px 89px;
+}
+
+.display-none {
+    display: none !important;
 }
 
 .footer_title{
@@ -118,7 +132,7 @@ footer{
 }
 
 .profile_header{
-    
+
 }
 
 .profile__header_row{
