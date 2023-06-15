@@ -89,6 +89,9 @@
                     @endif
                 </div>
             </div>
+            <div class="profile-menu" style="width: 100%; margin-top: 20px; color: black;">
+                {{ Str::limit(Auth::user()->about_me, $limit = 150, $end = '...') }}
+            </div>
         </div>
     </section>
     <div class="line"></div>
