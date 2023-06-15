@@ -24,7 +24,7 @@
                 <form action="{{ route('login') }}" method="POST" class="popup__form">
                     @csrf
                     <label class="popup__label" for="password"><p>Почта</p>
-                        <input class="popup__input @error('username') error @enderror" placeholder="Почта" id="email" type="text" name="email">
+                        <input class="popup__input @error('email') error @enderror" placeholder="Почта" id="email" type="text" name="email">
                     </label>
                     <label class="popup__label" for="password">
                         <p>Пароль</p><input class="popup__input @error('password') error @enderror" placeholder="Пароль" id="password" type="text" name="password">
