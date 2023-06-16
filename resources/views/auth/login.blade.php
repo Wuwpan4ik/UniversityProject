@@ -53,7 +53,7 @@
 {{--                        <a href=""><i style="color: #2563ea" class="fa-brands fa-telegram icon"></i></a>--}}
 {{--                        <a href=""><i style="color: #2563eb" class="fa-brands fa-vk icon"></i></a>--}}
 {{--                    </div>--}}
-                    <div class="popup__social-link" style="font-size: 20px;">
+                    <div class="popup__social-link" style="font-size: 20px; margin-bottom: 10px;">
                         Нет аккаунта? <a href="{{ route('register') }}" style="color: black;">Зарегистрируйтесь</a>
                     </div>
                     <div class="popup__social-link" style="font-size: 20px;">

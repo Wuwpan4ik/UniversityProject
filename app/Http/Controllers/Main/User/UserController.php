@@ -31,7 +31,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         $works = Work::where('user_id', $user->id)->get();
-        return view('account.show', compact('works'));
+        return view('account.show', compact('works', 'user'));
     }
 
     public function edit(User $user)

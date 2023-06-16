@@ -59,38 +59,40 @@
             <div class="profile-menu" style="width: 100%">
                 <div style="display: flex;align-items: center;gap: 30px;">
                     <div class="menu-avatar circle">
-                        <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="" class="avatar">
+                        <img src="{{ Storage::url($user->avatar) }}" alt="" class="avatar">
                     </div>
                     <div class="menu-name">
                         <div style="margin-bottom: 15px">
-                            <p style="color: black">@if(Auth::user()->name) {{ Auth::user()->name }} {{ Auth::user()->surname }} @else {{ Auth::user()->username }} @endif</p>
+                            <p style="color: black">@if($user->name) {{ $user->name }} {{ $user->surname }} @else {{ $user->username }} @endif</p>
                         </div>
                         <button type="button" onclick="copyLink()" style="color: black; display: flex; align-items: center; gap: 10px"><span id="share">Поделиться</span><i class="fa-solid fa-share"></i></button>
                     </div>
                 </div>
                 <div class="profile-menu">
-                    @if(!Auth::user()->is_manager)
-                    <a href="{{ route('user.edit', Auth::id()) }}">
-                        <button type="button" class="menu-redactor">
-                            <div class="redactor-icon"><i class="fa-solid fa-pen"></i></div>
-                            <div class="redactor-text">
-                                <p style="color: #000;">Редактировать профиль</p>
-                            </div>
-                        </button>
-                    </a>
-                    @endif
-                    @if(!Auth::user()->is_manager)
-                        <button type="button" class="menu-redactor menu-redactor__message">
-                            <div class="redactor-icon"><i class="fa-solid fa-pen"></i></div>
-                            <div class="redactor-text">
-                                <p style="color: #000;">Добавить сопроводительное письмо</p>
-                            </div>
-                        </button>
+                    @if ($user->id == Auth::id())
+                        @if(!Auth::user()->is_manager)
+                        <a href="{{ route('user.edit', Auth::id()) }}">
+                            <button type="button" class="menu-redactor">
+                                <div class="redactor-icon"><i class="fa-solid fa-pen"></i></div>
+                                <div class="redactor-text">
+                                    <p style="color: #000;">Редактировать профиль</p>
+                                </div>
+                            </button>
+                        </a>
+                        @endif
+                        @if(!Auth::user()->is_manager)
+                            <button type="button" class="menu-redactor menu-redactor__message">
+                                <div class="redactor-icon"><i class="fa-solid fa-pen"></i></div>
+                                <div class="redactor-text">
+                                    <p style="color: #000;">Добавить сопроводительное письмо</p>
+                                </div>
+                            </button>
+                        @endif
                     @endif
                 </div>
             </div>
             <div class="profile-menu" style="width: 100%; margin-top: 20px; color: black;">
-                {{ Str::limit(Auth::user()->about_me, $limit = 150, $end = '...') }}
+                {{ Str::limit($user->about_me, $limit = 150, $end = '...') }}
             </div>
         </div>
     </section>
@@ -103,14 +105,18 @@
                         @foreach($works as $work)
                             @include('components.main.work')
                         @endforeach
+                        @if ($user->id == Auth::id())
                             <div class="menu-myWorks">
                                 <button type="button" onclick="open_add_project()" class="menu-add"><img src="{{ asset('img/plus.png') }}" alt="" class="plus"></button>
                             </div>
+                        @endif
                     </div>
 
                 </div>
-                <div class="menu-logo" onclick="open_add_project()"><img src="{{ asset('img/logo.png') }}" alt="" class="logo"></div>
-                <button type="button" style="color: black" onclick="open_add_project()" class="menu-send">Создайте проект</button>
+                @if ($user->id == Auth::id())
+                    <div class="menu-logo" onclick="open_add_project()"><img src="{{ asset('img/logo.png') }}" alt="" class="logo"></div>
+                    <button type="button" style="color: black" onclick="open_add_project()" class="menu-send">Создайте проект</button>
+                @endif
             </div>
         </div>
     </section>
@@ -138,7 +144,7 @@
         <div class="popup-content" style="max-width: 800px;">
             <span class="close-btn">&times;</span>
             <h2 class="popup-title" style="margin-bottom: 20px">Сопроводительное письмо</h2>
-            <h3 style="font-size: 24px; margin-bottom: 20px;">Профиль {{ Auth::user()->username }}</h3>
+            <h3 style="font-size: 24px; margin-bottom: 20px;">Профиль {{ $user->username }}</h3>
             <form action="{{ route('mail', Auth::id()) }}" class="mail__form" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')

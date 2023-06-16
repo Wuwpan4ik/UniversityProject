@@ -8,6 +8,10 @@
             <img src="{{ asset('img/maxresdefault.jpg') }}" alt="" class="work">
         @endif
     </div>
+    <div class="work-description">
+        @if(Auth::user()->name)
+            <a href="{{ route('user.show', $work->user->id) }}">{{ $work->user->name }} {{ $work->user->surname }}</a> @else <a href="{{ route('user.show', $work->user->id) }}">{{ $work->user->username }}</a> @endif
+    </div>
     <div class="work-like">
         <form class="like__form" action="{{ route('like', $work->id) }}" method="POST">
             @csrf
